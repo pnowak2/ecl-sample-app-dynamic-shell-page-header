@@ -1,0 +1,17 @@
+<ecl-app-shell-standardised
+    [breadcrumbs]="breadcrumbs"
+    [languageCodes]="['en', 'fr']"
+    siteHeaderSiteName="eUI/ECL integration"
+    [pageHeaderTitle]="pageHeaderTitle"
+    [pageHeaderDescription]="pageHeaderDescription"
+    (siteHeaderSearch)="onSiteHeaderSearch($event)">
+
+    <ng-template eclSlot="page-header-breadcrumb-items">
+        <ecl-breadcrumb-standardised-segment>European Commission</ecl-breadcrumb-standardised-segment>
+        <ecl-breadcrumb-standardised-segment [isCurrentPage]="true">{{ pageHeaderTitle }}</ecl-breadcrumb-standardised-segment>
+    </ng-template>
+
+    <div class="ecl-container">
+        <router-outlet></router-outlet>
+    </div>
+</ecl-app-shell-standardised>
